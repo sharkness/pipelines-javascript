@@ -23,7 +23,7 @@ steps:
 - script: 'curl -LJO https://github.com/whitesource/unified-agent-distribution/releases/latest/download/wss-unified-agent.jar'
   displayName: 'Download the latest Unified Agent'
 
-- script: 'java -jar wss-unified-agent.jar -c wss-unified-agent_pjazure.config -apiKey $WS_APIKEY -projectToken $WS_PROJECT_TOKEN -productToken $WS_PRODUCT_TOKEN'
+- script: 'java -jar wss-unified-agent.jar -c wss-unified-agent_pjazure.config -wss.url $WS_WSS_URL -apiKey $WS_APIKEY -projectToken $WS_PROJECT_TOKEN -productToken $WS_PRODUCT_TOKEN'
   displayName: 'Run Unified Agent Scan'
   env:
     WS_APIKEY: $(ORG_API_KEY)
